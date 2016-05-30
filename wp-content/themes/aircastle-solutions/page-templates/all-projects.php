@@ -1,19 +1,9 @@
 <?php /* Template Name: All Projects Template */ ?>
 
-<h1>All Projects Template</h1>
-<p>All projects template</p>
+<?php get_header(); ?>
 
-<?php
-//$results = array(
-//    'one' => array(
-//        'title' => 'First Title',
-//        'description' => 'Lorem ipsum dolar sit amet'
-//    ),
-//    'two' => array(
-//        'title' => 'Second Title',
-//        'description' => 'Lorem ipsum dolar sit amet'
-//    )
-//);
-//
-//echo json_encode($results);
-?>
+    <h1>Item Page</h1>
+    <p>This is a sample item page</p>
+
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>

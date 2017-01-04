@@ -33,7 +33,7 @@ $count = 0;
     <?php if(have_rows('keywords')): ?>
         "keywords": [
         <?php
-            $total = (count(get_field_objects('keywords')['value']));
+            $total = (count(get_field('keywords')));
             while(have_rows('keywords')) :
             the_row();
             $delimiter = ($count++ == $total) ? '' : ',';

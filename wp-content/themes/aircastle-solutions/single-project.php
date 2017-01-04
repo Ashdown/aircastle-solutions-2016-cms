@@ -6,6 +6,9 @@ $count = 0;
     "id": "<?php the_ID(); ?>",
     "name": "<?php echo get_the_title(); ?>",
     <?php $picture = get_field('picture'); ?>
+
+    <?php var_dump($picture);?>
+
     "picture": {
         "url": "<?php echo $picture['url'] ?>",
         "alt": "<?php echo $picture['alt'] ?>",

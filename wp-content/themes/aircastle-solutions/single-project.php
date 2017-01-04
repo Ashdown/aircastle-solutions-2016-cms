@@ -24,13 +24,14 @@
         <?php while(have_rows('keywords')) : the_row(); ?>
             "<?php the_sub_field('keyword'); ?>",
         <?php endwhile; ?>
+        ],
     <?php endif; ?>
     <?php
         //04/01/2017
-        $startDate = date_create_from_format('d-m-Y', get_sub_field('start_date'));
-        $endDate = date_create_from_format('d-m-Y', get_sub_field('end_date'));
+        $startDate = DateTime::createFromFormat('d-m-Y', get_sub_field('start_date'));
+        $endDate = DateTime::createFromFormat('d-m-Y', get_sub_field('end_date'));
     ?>
-    "startDate": "<?php echo $startDate; ?>",
-    "endDate": "<?php echo $endDate; ?>"
+    "startDate": "<?php echo $startDate->format('M, Y'); ?>",
+    "endDate": "<?php echo $endDate->format('M, Y'); ?>"
 }
 

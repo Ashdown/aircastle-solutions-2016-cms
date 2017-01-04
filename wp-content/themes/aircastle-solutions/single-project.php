@@ -1,3 +1,7 @@
+<?php
+$count = 0;
+?>
+
 {
     "id": "<?php the_ID(); ?>",
     "name": "<?php echo get_the_title(); ?>",
@@ -11,23 +15,36 @@
     "description": "<?php echo get_field('description'); ?>",
     <?php if(have_rows('links')): ?>
         "links":[
-        <?php while(have_rows('links')) : the_row(); ?>
-            {
-            "text": "<?php the_sub_field('text'); ?>",
-            "url":  "<?php the_sub_field('url'); ?>"
-            },
-        <?php endwhile; ?>
+        <?php
+            while(have_rows('links')) :
+                the_row();
+                $delimiter = ($count++ === count(get_field('links'))) ? '' : ',';
+                ?>
+                {
+                "text": "<?php the_sub_field('text'); ?>",
+                "url":  "<?php the_sub_field('url'); ?>"
+                }<?php echo $delimiter; ?>
+            <?php
+            endwhile;
+            $count = 0;
+        ?>
         ],
     <?php endif; ?>
     <?php if(have_rows('keywords')): ?>
         "keywords": [
-        <?php while(have_rows('keywords')) : the_row(); ?>
-            "<?php the_sub_field('keyword'); ?>",
-        <?php endwhile; ?>
+        <?php
+            while(have_rows('keywords')) :
+            the_row();
+            $delimiter = ($count++ === count(get_field('links'))) ? '' : ',';
+            ?>
+            "<?php the_sub_field('keyword'); ?>"<?php echo $delimiter; ?>
+        <?php
+            endwhile;
+            $count = 0;
+        ?>
         ],
     <?php endif; ?>
     <?php
-        //04/01/2017
         $startDate = DateTime::createFromFormat('d/m/Y', get_field('start_date'));
         $endDate = DateTime::createFromFormat('d/m/Y', get_field('end_date'));
     ?>

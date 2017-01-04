@@ -10,7 +10,7 @@ while ( $loop->have_posts() ) : $loop->the_post();
     ?>
     {
         "title": "<?php the_title(); ?>",
-        "url": "/projects/<?php echo basename(get_permalink()); ?>
+        "url": "/project/<?php echo basename(get_permalink()); ?>
     },
     <?php
 endwhile;

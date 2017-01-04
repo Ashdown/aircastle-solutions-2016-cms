@@ -11,7 +11,8 @@ function create_post_type() {
       'public' => true,
       'has_archive' => true,
       'supports' => array('title','author','thumbnail'),
-      'menu_icon' => 'dashicons-id'
+      'menu_icon' => 'dashicons-id',
+      'rewrite' => array('slug' => 'projects')
     )
   );
 }

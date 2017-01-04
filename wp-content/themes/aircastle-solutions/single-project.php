@@ -18,7 +18,7 @@ $count = 0;
         <?php
             while(have_rows('links')) :
                 the_row();
-                $delimiter = ($count++ == count(get_field('links'))) ? '' : ',';
+                $delimiter = (++$count == count(get_field('links'))) ? '' : ',';
                 ?>
                 {
                 "text": "<?php the_sub_field('text'); ?>",
@@ -36,14 +36,9 @@ $count = 0;
             $total = (count(get_field('keywords')));
             while(have_rows('keywords')) :
             the_row();
-                $delimiter = (++$count == $total) ? '' : ',';
-                var_dump($count);
-                var_dump($total);
-                var_dump($count == $total);
-
-
+            $delimiter = (++$count == $total) ? '' : ',';
                 ?>
-            "<?php the_sub_field('keyword'); ?>"<?php echo $delimiter; ?>|<?php echo $count; ?>|<?php echo $total; ?>|
+            "<?php the_sub_field('keyword'); ?>"<?php echo $delimiter; ?>
         <?php
             endwhile;
             $count = 0;

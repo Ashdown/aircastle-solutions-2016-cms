@@ -37,7 +37,7 @@ $count = 0;
             the_row();
             $delimiter = ($count++ == count(get_field('keywords'))) ? '' : ',';
             ?>
-            "<?php the_sub_field('keyword'); ?>"<?php echo $delimiter; ?>
+            "<?php the_sub_field('keyword'); ?>"<?php echo $delimiter; ?><?php echo $count; ?><?php echo count(get_field('keywords')); ?>
         <?php
             endwhile;
             $count = 0;

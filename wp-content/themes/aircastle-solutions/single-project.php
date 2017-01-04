@@ -7,13 +7,11 @@ $count = 0;
     "name": "<?php echo get_the_title(); ?>",
     <?php $picture = get_field('picture'); ?>
 
-    <?php var_dump($picture);?>
-
     "picture": {
         "url": "<?php echo $picture['url'] ?>",
         "alt": "<?php echo $picture['alt'] ?>",
-        "height": "<?php echo $picture['sizes']['full-height'] ?>",
-        "width": "<?php echo $picture['sizes']['full-width'] ?>",
+        "height": "<?php echo $picture['sizes']['large-height'] ?>",
+        "width": "<?php echo $picture['sizes']['large-width'] ?>",
     },
     "description": "<?php echo get_field('description'); ?>",
     <?php if(have_rows('links')): ?>

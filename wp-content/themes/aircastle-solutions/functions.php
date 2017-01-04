@@ -9,7 +9,9 @@ function create_post_type() {
         'singular_name' => __( 'Project' )
       ),
       'public' => true,
-      'has_archive' => true
+      'has_archive' => true,
+      'supports' => array('title','author','thumbnail'),
+      'menu_icon' => 'dashicons-id'
     )
   );
 }

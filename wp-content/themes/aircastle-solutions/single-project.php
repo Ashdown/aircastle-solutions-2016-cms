@@ -33,11 +33,12 @@ $count = 0;
     <?php if(have_rows('keywords')): ?>
         "keywords": [
         <?php
+            $total = (count(get_field_objects('keywords')['value']));
             while(have_rows('keywords')) :
             the_row();
-            $delimiter = ($count++ == count(get_field('keywords'))) ? '' : ',';
+            $delimiter = ($count++ == $total) ? '' : ',';
             ?>
-            "<?php the_sub_field('keyword'); ?>"<?php echo $delimiter; ?><?php echo $count; ?><?php echo count(get_field('keywords')); ?>
+            "<?php the_sub_field('keyword'); ?>"<?php echo $delimiter; ?><?php echo $count; ?><?php echo $total; ?>
         <?php
             endwhile;
             $count = 0;

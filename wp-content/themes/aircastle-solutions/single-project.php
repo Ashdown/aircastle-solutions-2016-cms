@@ -25,7 +25,12 @@
             "<?php the_sub_field('keyword'); ?>",
         <?php endwhile; ?>
     <?php endif; ?>
-    "startDate": "sample",
-    "endDate": "sample"
+    <?php
+        //04/01/2017
+        $startDate = date_create_from_format('d-m-Y', get_sub_field('start_date'));
+        $endDate = date_create_from_format('d-m-Y', get_sub_field('end_date'));
+    ?>
+    "startDate": "<?php echo $startDate; ?>",
+    "endDate": "<?php echo $endDate; ?>"
 }
 

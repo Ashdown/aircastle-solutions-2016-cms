@@ -11,7 +11,7 @@
         ?>
         {
             "title": "<?php the_title(); ?>",
-            "url": "/project/<?php echo basename(get_permalink()); ?>
+            "url": "/projects/<?php echo basename(get_permalink()); ?>"
         }<?php echo $deliminator; ?>
         <?php
     endwhile;

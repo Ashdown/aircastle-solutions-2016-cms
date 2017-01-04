@@ -7,10 +7,10 @@ $count = 0;
     "name": "<?php echo get_the_title(); ?>",
     <?php $picture = get_field('picture'); ?>
     "picture": {
-    "url": "<?php echo $picture['url'] ?>",
-    "alt": "<?php echo $picture['alt'] ?>",
-    "height": "<?php echo $picture['sizes']['full-height'] ?>",
-    "width": "<?php echo $picture['sizes']['full-width'] ?>",
+        "url": "<?php echo $picture['url'] ?>",
+        "alt": "<?php echo $picture['alt'] ?>",
+        "height": "<?php echo $picture['sizes']['full-height'] ?>",
+        "width": "<?php echo $picture['sizes']['full-width'] ?>",
     },
     "description": "<?php echo get_field('description'); ?>",
     <?php if(have_rows('links')): ?>
@@ -18,7 +18,7 @@ $count = 0;
         <?php
             while(have_rows('links')) :
                 the_row();
-                $delimiter = ($count++ === count(get_field('links'))) ? '' : ',';
+                $delimiter = ($count++ == count(get_field('links'))) ? '' : ',';
                 ?>
                 {
                 "text": "<?php the_sub_field('text'); ?>",
@@ -35,7 +35,7 @@ $count = 0;
         <?php
             while(have_rows('keywords')) :
             the_row();
-            $delimiter = ($count++ === count(get_field('links'))) ? '' : ',';
+            $delimiter = ($count++ == count(get_field('keywords'))) ? '' : ',';
             ?>
             "<?php the_sub_field('keyword'); ?>"<?php echo $delimiter; ?>
         <?php

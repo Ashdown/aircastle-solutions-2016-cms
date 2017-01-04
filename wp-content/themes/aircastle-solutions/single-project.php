@@ -28,10 +28,11 @@
     <?php endif; ?>
     <?php
         //04/01/2017
-        $startDate = DateTime::createFromFormat('d/m/Y', get_sub_field('start_date'));
-        $endDate = DateTime::createFromFormat('d/m/Y', get_sub_field('end_date'));
+        $startDate = DateTime::createFromFormat('d/m/Y', get_field('start_date'));
+        $endDate = DateTime::createFromFormat('d/m/Y', get_field('end_date'));
     ?>
     "startDate": "<?php echo $startDate->format('M, Y'); ?>",
-    "endDate": "<?php echo $endDate->format('M, Y'); ?>"
+    "endDate": "<?php echo $endDate->format('M, Y'); ?>",
+    "test" : <?php echo get_field('start_date'); ?>
 }
 

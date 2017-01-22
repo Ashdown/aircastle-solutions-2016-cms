@@ -12,7 +12,7 @@
         {
             "id": <?php the_ID(); ?>,
             "title": "<?php the_title(); ?>",
-            "type": "<?php the_sub_field('type'); ?>",
+            "type": "<?php the_field('type'); ?>",
             "picture": {
                 "url": "<?php echo $picture['url'] ?>",
                 "alt": "<?php echo $picture['alt'] ?>",

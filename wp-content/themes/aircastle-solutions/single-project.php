@@ -12,7 +12,7 @@ $count = 0;
         "url": "<?php echo $picture['url'] ?>",
         "alt": "<?php echo $picture['alt'] ?>",
         "height": "<?php echo $picture['sizes']['large-height'] ?>",
-        "width": "<?php echo $picture['sizes']['large-width'] ?>",
+        "width": "<?php echo $picture['sizes']['large-width'] ?>"
     },
     "description": "<?php echo get_field('description'); ?>",
     <?php if(have_rows('links')): ?>

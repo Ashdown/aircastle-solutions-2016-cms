@@ -10,8 +10,9 @@
 
         ?>
         {
-            "id": <?php the_ID(); ?>
+            "id": <?php the_ID(); ?>,
             "title": "<?php the_title(); ?>",
+            "type": "<?php the_sub_field('type'); ?>",
             "picture": {
                 "url": "<?php echo $picture['url'] ?>",
                 "alt": "<?php echo $picture['alt'] ?>",
@@ -56,7 +57,7 @@
             $endDate = DateTime::createFromFormat('d/m/Y', get_field('end_date'));
             ?>
             "startDate": "<?php echo $startDate->format('F, Y'); ?>",
-            "endDate": "<?php echo $endDate->format('F, Y'); ?>"
+            "endDate": "<?php echo $endDate->format('F, Y'); ?>",
             "url": "/projects/<?php echo basename(get_permalink()); ?>"
         }<?php echo $deliminator; ?>
         <?php

@@ -5,6 +5,7 @@ $count = 0;
 {
     "id": "<?php the_ID(); ?>",
     "name": "<?php echo get_the_title(); ?>",
+    "type": "<?php echo the_field('type'); ?>",
     <?php $picture = get_field('picture'); ?>
 
     "picture": {

@@ -16,19 +16,20 @@
             <?php if(have_rows('pictures')): ?>
                 "pictures" : [
                 <?php
-                while(have_rows('pictures')) :
-                    the_row();
-                    $delimiter = (++$count == count(get_field('pictures'))) ? '' : ',';
-                    $picture = get_sub_field('picture');
-                    ?>
-                    {
-                    "url": "<?php echo $picture['url'] ?>",
-                    "alt": "<?php echo $picture['alt'] ?>",
-                    "height": "<?php echo $picture['sizes']['large-height'] ?>",
-                    "width": "<?php echo $picture['sizes']['large-width'] ?>"
-                    }<?php echo $delimiter; ?>
-                <?php
-                endwhile;
+                    while(have_rows('pictures')) :
+                        the_row();
+                        $delimiter = (++$count == count(get_field('pictures'))) ? '' : ',';
+                        $picture = get_sub_field('picture');
+                        ?>
+                            {
+                            "url": "<?php echo $picture['url'] ?>",
+                            "alt": "<?php echo $picture['alt'] ?>",
+                            "height": "<?php echo $picture['sizes']['large-height'] ?>",
+                            "width": "<?php echo $picture['sizes']['large-width'] ?>"
+                            }<?php echo $delimiter; ?>
+                        <?php
+                    endwhile;
+                    $count = 0;
                 ?>
                 ],
             <?php endif; ?>

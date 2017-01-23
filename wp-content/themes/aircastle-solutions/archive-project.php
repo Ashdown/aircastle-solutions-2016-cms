@@ -1,6 +1,3 @@
-<?php
-    //header('Content-type:application/json;charset=utf-8');
-?>
 <?php echo $_GET['callback'] . '(' ?>
 
 {

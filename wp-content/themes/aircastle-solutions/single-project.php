@@ -1,8 +1,7 @@
 <?php
-header('Content-type:application/json;charset=utf-8');
+echo $_GET['callback'] . '(';
 $count = 0;
 ?>
-
 {
     "id": "<?php the_ID(); ?>",
     "name": "<?php echo get_the_title(); ?>",
@@ -67,4 +66,5 @@ $count = 0;
     "startDate": "<?php echo $startDate->format('F, Y'); ?>",
     "endDate": "<?php echo $endDate->format('F, Y'); ?>"
 }
+<?php echo ')' ?>
 

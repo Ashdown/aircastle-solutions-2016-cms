@@ -21,9 +21,12 @@
                         the_row();
                         $delimiter = (++$count == count(get_field('pictures'))) ? '' : ',';
                         $picture = get_sub_field('picture');
+
+                        $url = str_replace('shielded-scrubland-59117.herokuapp.com', 'cms.rorydevane.com', $picture['url']);
+
                         ?>
                             {
-                            "url": "<?php echo $picture['url'] ?>",
+                            "url": "<?php echo $url ?>",
                             "alt": "<?php echo $picture['alt'] ?>",
                             "height": "<?php echo $picture['sizes']['large-height'] ?>",
                             "width": "<?php echo $picture['sizes']['large-width'] ?>"

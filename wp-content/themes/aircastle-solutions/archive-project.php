@@ -1,10 +1,10 @@
 <?php
-    header('Content-type:application/json;charset=utf-8');
+    //header('Content-type:application/json;charset=utf-8');
 ?>
+<?php echo $_GET['callback'] . '(' ?>
 
 {
     "projects":[
-
     <?php
     $args = array( 'post_type' => 'project', 'posts_per_page' => -1 );
     $query = new WP_Query( $args );
@@ -83,3 +83,4 @@
     ?>
     ]
 }
+<?php echo ')' ?>

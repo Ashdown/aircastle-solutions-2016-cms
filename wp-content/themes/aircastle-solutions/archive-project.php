@@ -39,7 +39,7 @@
                 ?>
                 ],
             <?php endif; ?>
-            "description": "<?php echo nl2br(get_field('description')); ?>",
+            "description": "<?php echo str_replace(["\r\n", "\r", "\n"], "<br/>", get_field('description')); ?>",
             <?php if(have_rows('links')): ?>
                 "links":[
                 <?php

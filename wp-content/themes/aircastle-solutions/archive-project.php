@@ -1,5 +1,5 @@
 <?php
-    $callback = preg_replace('/[^-a-zA-Z0-9_]/', '', $_GET['calback']);
+    $callback = preg_replace('/[^-a-zA-Z0-9_]/', '', $_GET['callback']);
 ?>
 
 <?php echo $callback; ?>({

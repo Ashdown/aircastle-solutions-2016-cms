@@ -1,6 +1,8 @@
-<?php echo $_GET['callback'] . '(' ?>
+<?php
+    $callback = preg_replace('/[^-a-zA-Z0-9_]/', '', $_GET['calback']);
+?>
 
-{
+<?php echo $callback; ?>({
     "projects":[
     <?php
     $args = array( 'post_type' => 'project', 'posts_per_page' => -1 );
@@ -37,7 +39,7 @@
                 ?>
                 ],
             <?php endif; ?>
-            "description": "<?php echo get_field('description'); ?>",
+            "description": "<?php echo nl2br(get_field('description')); ?>",
             <?php if(have_rows('links')): ?>
                 "links":[
                 <?php
@@ -82,5 +84,4 @@
     endwhile;
     ?>
     ]
-}
-<?php echo ')' ?>
+})

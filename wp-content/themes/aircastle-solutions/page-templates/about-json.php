@@ -14,6 +14,6 @@ $url = str_replace('shielded-scrubland-59117.herokuapp.com', 'cms.rorydevane.com
         "height": "<?php echo $picture['sizes']['large-height'] ?>",
         "width": "<?php echo $picture['sizes']['large-width'] ?>"
     },
-    "description": "<?php get_the_field('description') ?>"
+    "description": "<?php the_field('description') ?>"
     }
 });

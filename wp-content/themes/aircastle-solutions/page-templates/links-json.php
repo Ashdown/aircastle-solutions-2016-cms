@@ -9,13 +9,12 @@
             while ( have_rows('links') ) :
                 the_row();
                 $delimiter = (++$count == count(get_field('links'))) ? '' : ',';
-                $link = get_sub_field('link');
                 ?>
                 {
                     "id": "<?php the_ID(); ?>",
-                    "text": "<?php echo $link['text'] ?>",
-                    "destination": "<?php echo $link['destination'] ?>",
-                    "type": "<?php echo $link['type'] ?>"
+                    "text": "<?php the_sub_field('text'); ?>",
+                    "destination": "<?php the_sub_field('destination'); ?>",
+                    "type": "<?php the_sub_field('type'); ?>"
                 }<?php echo $delimiter; ?>
                 <?php
             endwhile;

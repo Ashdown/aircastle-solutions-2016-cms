@@ -1,6 +1,10 @@
 <?php /* Template Name: Links Data */ ?>
 
-{
+<?php
+$callback = preg_replace('/[^-a-zA-Z0-9_]/', '', $_GET['callback']);
+?>
+
+<?php echo $callback; ?>({
     <?php if(have_rows('links')): ?>
 
     "links": [
@@ -21,4 +25,4 @@
         ?>
     ]
     <?php endif; ?>
-}
+});

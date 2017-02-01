@@ -76,8 +76,8 @@
             $startDate = DateTime::createFromFormat('d/m/Y', get_field('start_date'));
             $endDate = DateTime::createFromFormat('d/m/Y', get_field('end_date'));
             ?>
-            "startDate": "<?php echo $startDate->format('F, Y'); ?>",
-            "endDate": "<?php echo $endDate->format('F, Y'); ?>",
+            "startDate": "<?php echo $startDate->format('YYYY-MM-DD'); ?>",
+            "endDate": "<?php echo $endDate->format('YYYY-MM-DD'); ?>",
             "url": "/projects/<?php echo basename(get_permalink()); ?>"
         }<?php echo $deliminator; ?>
         <?php

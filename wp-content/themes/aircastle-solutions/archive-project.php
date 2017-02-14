@@ -16,6 +16,7 @@
             "id": <?php the_ID(); ?>,
             "title": "<?php the_title(); ?>",
             "type": "<?php the_field('type'); ?>",
+            "background_colour": <?php the_field('background_colour'); ?>,
             <?php if(have_rows('pictures')): ?>
                 "pictures" : [
                 <?php

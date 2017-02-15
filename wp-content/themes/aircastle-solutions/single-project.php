@@ -6,7 +6,7 @@ $count = 0;
     "id": "<?php the_ID(); ?>",
     "name": "<?php echo get_the_title(); ?>",
     "type": "<?php the_field('type'); ?>",
-    "background_colour": <?php the_field('background_colour'); ?>,
+    "background_colour": "<?php the_field('background_colour'); ?>",
     <?php if(have_rows('pictures')): ?>
         "pictures" : [
         <?php
